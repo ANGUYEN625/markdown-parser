@@ -8,34 +8,34 @@ import java.util.List;
 import org.junit.*;
 
 public class MarkdownParseTest {
-    /*@Test
+    @Test
     public void addition() {
         assertEquals(2, 1 + 1);
     } 
 
     @Test
     public void LinksTest() throws IOException{
-        String fileContent = Files.readString(Path.of("C:\Users\12095\Documents\GitHub\markdown-parser\test-file.md"));
+        String fileContent = Files.readString(Path.of("C:\\Users\\12095\\Documents\\GitHub\\markdown-parser\\test-file.md"));
         assertEquals(List.of("https://something.com", "some-thing.html"), MarkdownParse.getLinks(fileContent));
     }
 
     @Test
     public void Links2Test() throws IOException{
-        String fileContent = Files.readString(Path.of("C:\Users\12095\Documents\GitHub\markdown-parser\2test.md"));
+        String fileContent = Files.readString(Path.of("C:\\Users\\12095\\Documents\\GitHub\\markdown-parser\\2test.md"));
         assertEquals(List.of("https://google.com", "bruh.com"), MarkdownParse.getLinks(fileContent));
     }
 
     @Test
     public void Links3Test() throws IOException{
-        String fileContent = Files.readString(Path.of("C:\Users\12095\Documents\GitHub\markdown-parser\3test.md"));
+        String fileContent = Files.readString(Path.of("C:\\Users\\12095\\Documents\\GitHub\\markdown-parser\\3test.md"));
         assertEquals(List.of("youtube.com"), MarkdownParse.getLinks(fileContent));
     }
 
     @Test
     public void Links4Test() throws IOException{
-        String fileContent = Files.readString(Path.of("C:\Users\12095\Documents\GitHub\markdown-parser\4test.md"));
+        String fileContent = Files.readString(Path.of("C:\\Users\\12095\\Documents\\GitHub\\markdown-parser\\4test.md"));
         assertEquals(List.of("bruhmoment.com"), MarkdownParse.getLinks(fileContent));
-    }*/
+    }
     
     @Test
     public void File1Test() throws IOException{
