@@ -13,10 +13,14 @@ public class MarkdownParse {
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
             int openBracket = markdown.indexOf("[", currentIndex);
+            int imgFinder = markdown.indexOf("!", currentIndex);
+            if (imgFinder > 0){
+                return toReturn;
+            }
             if(openBracket < 0){
                 return toReturn;
             }
-            
+
             int closeBracket = markdown.indexOf("]", openBracket);
             if(closeBracket < 0){
                 return toReturn;
