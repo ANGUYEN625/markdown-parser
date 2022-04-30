@@ -14,9 +14,6 @@ public class MarkdownParse {
         while(currentIndex < markdown.length()) {
             int openBracket = markdown.indexOf("[", currentIndex);
             int imgFinder = markdown.indexOf("!", currentIndex);
-            if (imgFinder > 0){
-                return toReturn;
-            }
             if(openBracket < 0){
                 return toReturn;
             }
@@ -35,6 +32,11 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             if(closeParen < 0){
                 return toReturn;
+            }
+
+            if (imgFinder < openBracket){
+                currentIndex = closeParen + 1;
+
             }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
