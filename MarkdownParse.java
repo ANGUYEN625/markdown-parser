@@ -16,10 +16,7 @@ public class MarkdownParse {
             if(openBracket < 0){
                 return toReturn;
             }
-            int imageDetector = markdown.indexOf("!", openBracket--);
-            if(imageDetector != -1){
-                return toReturn;
-            }
+            
             int closeBracket = markdown.indexOf("]", openBracket);
             if(closeBracket < 0){
                 return toReturn;
