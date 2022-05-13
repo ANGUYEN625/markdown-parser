@@ -17,11 +17,12 @@ public class MarkdownParse {
             if(openBracket < 0){
                 return toReturn;
             }
-            int closeBracket = markdown.indexOf("]", openBracket);
 
+            int closeBracket = markdown.indexOf("]", openBracket);
             if(closeBracket < 0){
                 return toReturn;
             }
+
             int openParen = markdown.indexOf("(", closeBracket);
             if(openParen < 0){
                 return toReturn;
@@ -32,10 +33,10 @@ public class MarkdownParse {
             }
 
             int closeParen = markdown.indexOf(")", openParen);
-
             if(closeParen < 0){
                 return toReturn;
             }
+            
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
             int nextLink = markdown.indexOf("[", currentIndex);
