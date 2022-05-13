@@ -36,6 +36,10 @@ public class MarkdownParse {
                 return toReturn;
             }
 
+            if (markdown.substring(openBracket - 1) != "!"){
+                toReturn.add(markdown.substring(openParen + 1, closeParen));
+            }
+
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
             int nextLink = markdown.indexOf("[", currentIndex);
