@@ -13,12 +13,12 @@ public class MarkdownParse {
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
             int openBracket = markdown.indexOf("[", currentIndex);
-            int imgFinder = markdown.indexOf("!", currentIndex);
+
             if(openBracket < 0){
                 return toReturn;
             }
-
             int closeBracket = markdown.indexOf("]", openBracket);
+
             if(closeBracket < 0){
                 return toReturn;
             }
@@ -26,17 +26,15 @@ public class MarkdownParse {
             if(openParen < 0){
                 return toReturn;
             }
+            
             if(openParen - closeBracket > 1){
                 return toReturn;
             }
+
             int closeParen = markdown.indexOf(")", openParen);
+
             if(closeParen < 0){
                 return toReturn;
-            }
-
-            if (imgFinder < openBracket){
-                currentIndex = closeParen + 1;
-
             }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
